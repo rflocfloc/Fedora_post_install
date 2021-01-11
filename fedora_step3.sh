@@ -22,7 +22,7 @@ echo 'Install and remove some apps'
 sudo dnf config-manager --set-enabled google-chrome 
 sudo dnf config-manager --set-enabled rpmfusion-nonfree-steam 
 sudo dnf udpate -y
-sudo dnf install -y gnome-tweaks htop R timeshift steam google-chrome-stable git gparted
+sudo dnf install -y gnome-tweaks htop R timeshift steam google-chrome-stable git gparted openssl-devel libcurl-devel
 sudo dnf remove -y libreoffice-*
 
 echo ''
