@@ -18,6 +18,10 @@ echo 'Install paper icon theme'
 sudo dnf install -y paper-icon-theme
 
 echo ''
+echo 'Install papirus icon theme'
+sudo dnf install -y papirus-icon-theme
+
+echo ''
 echo 'Install and remove some apps'
 sudo dnf config-manager --set-enabled google-chrome 
 sudo dnf config-manager --set-enabled rpmfusion-nonfree-steam 
