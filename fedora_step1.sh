@@ -7,8 +7,8 @@
 
 echo ''
 echo 'Add optimized mount options to fstab'
-sudo sed -i 's/subvol=@home /subvol=@home,ssd,noatime,space_cache,commit=120,compress=zstd,discard=async /' /etc/fstab
-sudo sed  -i 's/subvol=@ /subvol=@,ssd,noatime,space_cache,commit=120,compress=zstd,discard=async /' /etc/fstab
+sudo sed -i 's/subvol=@home /subvol=@home,ssd,noatime /' /etc/fstab
+sudo sed  -i 's/subvol=@ /subvol=@,ssd,noatime /' /etc/fstab
 
 
 echo ''
