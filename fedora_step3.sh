@@ -11,7 +11,11 @@ sudo dnf install fontconfig-font-replacements -y
 
 echo ''
 echo 'Install materia gtk theme'
-sudo dnf install -y materia-gtk-theme 
+sudo dnf install -y materia-gtk-theme
+
+echo ''
+echo 'Install arc gtk theme'
+sudo dnf install -y arc-theme
 
 echo ''
 echo 'Install paper icon theme'
@@ -20,6 +24,11 @@ sudo dnf install -y paper-icon-theme
 echo ''
 echo 'Install papirus icon theme'
 sudo dnf install -y papirus-icon-theme
+
+echo ''
+echo 'Install folder color'
+sudo dnf copr enable kleong/folder-color -y 
+sudo dnf install -y folder-color-common folder-color-nautilus
 
 echo ''
 echo 'Install and remove some apps'
