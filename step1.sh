@@ -27,10 +27,14 @@ sudo dnf groupupdate sound-and-video -y
 
 echo ''
 echo 'Enable exFat support'
-sudo dnf install -y exfat-utils fuse-exfat ffmpeg intel-media-driver git gparted openssl-devel libcurl-devel
+sudo dnf install -y exfat-utils fuse-exfat 
 
 echo ''
-echo 'Driver search'
+echo 'Install some codecs and apps'
+sudo dnf install -y ffmpeg intel-media-driver git gparted openssl-devel libcurl-devel
+
+echo ''
+echo '(More) Driver search '
 sudo dnf upgrade --refresh -y
 sudo dnf check
 sudo dnf autoremove -y
