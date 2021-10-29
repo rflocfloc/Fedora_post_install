@@ -31,7 +31,7 @@ sudo dnf install -y exfat-utils fuse-exfat
 
 echo ''
 echo 'Install some codecs and apps'
-sudo dnf install -y ffmpeg intel-media-driver git gparted openssl-devel libcurl-devel
+sudo dnf install -y ffmpeg intel-media-driver git gparted openssl-devel libcurl-devel ssh sshfs
 
 echo ''
 echo '(More) Driver search '
