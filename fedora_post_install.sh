@@ -127,6 +127,7 @@ while true; do
 	   mamba create -n "ml" -y python=3 pandas numpy matplotlib seaborn scipy scikit-learn jupyter
 	   mamba create -n "snakemake" -y python=3 pandas numpy matplotlib snakemake
 	   rm Miniconda3.sh
+	   mamba clean --all -y
 	   display_result "Miniconda Up & Running" 
            ;;
 	9) echo "Installing Julia"
