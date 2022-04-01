@@ -77,7 +77,13 @@ while true; do
             display_result "DNF & RPM Fusion Enabled" 
            ;;
         2)  echo "Upgrade"
-            sudo dnf -y upgrade
+            sudo dnf -y upgrade --refresh
+	    sudo dnf check
+	    sudo dnf autoremove -y
+	    sudo fwupdmgr get-devices
+	    sudo fwupdmgr refresh --force
+	    sudo fwupdmgr get-updates
+	    sudo fwupdmgr update -y
             display_result "System Upgraded" 
            ;;
         3)  echo "Media Codecs & Supports"
@@ -87,7 +93,9 @@ while true; do
             sudo dnf groupupdate core -y
 	    sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
 	    sudo dnf groupupdate sound-and-video -y
+	    sudo dnf install dnf-plugins-core -y
 	    sudo dnf install -y ffmpeg intel-media-driver git openssl-devel libcurl-devel ssh sshfs exfat-utils fuse-exfat 
+	    sudo dnf upgrade --refresh -y
             display_result "Codecs and Support Installed" 
            ;;
         4)  echo "Enabling Flathub"
