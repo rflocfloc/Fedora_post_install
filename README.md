@@ -13,15 +13,15 @@ The main menu with the task options will be displayed, simply launch the one you
 ![Tasks main menu.](main_menu.png)
 
 ## Current options
-- DNF & RPM Fusion;
-- Upgrade;
-- Media Codecs & Supports;
-- Enable Flathub;
-- Install Software (Flatpaks);
-- R & RStudio;
-- Fedora ToolBox;
-- Miniconda;
-- Exit & Reboot.
+1) DNF & RPM Fusion;
+2) Upgrade;
+3) Media Codecs & Supports;
+4) Enable Flathub;
+5) Install Software (Flatpaks);
+6) R & RStudio;
+7) Fedora ToolBox;
+8) Miniconda;
+9) Exit & Reboot.
 
 #### DNF & RPM Fusion
 Sets DNF max_parallel_downloads flag to 20 (deafult=3) and adds RPM Fusion proprietary repos.
