@@ -1,5 +1,2 @@
-# Fedora post install
-Some things to do after installing Fedora
-
-- step1.sh : dnf set up, RPMFusion, Flathub and some drivers
-- step2.sh : Flathub apps installation
+# Fedora post install tasks
+Some things I usually do after installing Fedora.
