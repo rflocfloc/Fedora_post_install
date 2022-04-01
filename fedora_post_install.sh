@@ -30,6 +30,21 @@ display_result() {
     --msgbox "Yeeee!" 0 0
 }
 
+APPS=(Firmware "GUI for firmware drivers" off 
+      FontDownloader "FontDownloader app" off
+      Fragments "Torrent client" off
+      GIMP "Photo editing app" off
+      Inkscape "Vector graphics app" off
+      com.visualstudio.code "VSCode" off
+      com.github.marktext.marktext "Markdown app" off
+      com.github.tchx84.Flatseal "Manage Flatpak apps permissions " off
+      org.onlyoffice.desktopeditors "Office suite replacement" off
+      com.slack.Slack "Slack" off
+      org.telegram.desktop "Telegram" off
+      zoom "Zoom" off
+      Spotify "Spotify" off
+      PDFArranger "PDF merger" off)
+
 while true; do
   exec 3>&1
   selection=$(dialog \
@@ -80,23 +95,12 @@ while true; do
             flatpak update
             display_result "Flathub Repos Added"
            ;;
-        5)  echo "Installing Software"
-            flatpak install -y \
-                  Firmware \              # lets you check and update firmware of your hardware
-                  FontDownloader \        
-                  Fragments \             # Torrents download client 
-                  GIMP \ 
-                  GIMP.Plugins.Resynthetizer \    # Plugin for GIMP heal correction 
-                  Inkscape \
-                  com.visualstudio.code \
-                  com.github.tchx84.Flatseal \
-                  com.github.marktext.marktext \
-                  org.onlyoffice.desktopeditors \
-                  com.slack.Slack \
-                  PDFArranger \ 
-                  Telegram \ 
-                  Spotify \ 
-            display_result "Software has been installed"
+        5)  appsel=$(dialog --separate-output --checklist "Select the groups they belong:" 0 0 0 "${APPS[@]}" 2>&1 >/dev/tty)
+        clear
+        for opt in $appsel; do
+ 		flatpak install -y $opt
+ 	done
+ 	#display_result "Flatpak Apps Added"
            ;;
         6) echo "Setting up R & RStudio"
            sudo dnf install R -y
