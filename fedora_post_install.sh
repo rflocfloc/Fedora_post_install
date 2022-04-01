@@ -121,6 +121,7 @@ while true; do
 	   conda config --append channels conda-forge
 	   conda config --add channels bioconda
 	   conda install mamba -y
+	   mamba install pandas numpy matplotlib -y
 	   rm Miniconda3.sh
 	   display_result "Miniconda Up & Running" 
            ;;
