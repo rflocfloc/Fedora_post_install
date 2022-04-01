@@ -1,5 +1,5 @@
 # Fedora post install tasks
-Some tasks I usually do after installing Fedora.
+Some tasks I usually do after installing Fedora. If you want you can use it, at your own risk!
 
 ## Usage
 Git clone the repo or directly download the sh script and run it.
