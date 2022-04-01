@@ -17,12 +17,11 @@ The main menu with the task options will be displayed, simply launch the one you
 2) Upgrade;
 3) Media Codecs & Supports;
 4) Enable Flathub;
-5) Custom Prompt;
-6) Install Software (Flatpaks);
-7) R & RStudio;
-8) Fedora ToolBox;
-9) Miniconda;
-10) Exit & Reboot.
+5) Install Software (Flatpaks);
+6) R & RStudio;
+7) Fedora ToolBox;
+8) Miniconda;
+9) Exit & Reboot.
 
 #### DNF & RPM Fusion
 Sets DNF max_parallel_downloads flag to 20 (deafult=3) and adds RPM Fusion proprietary repos.
@@ -35,9 +34,6 @@ From RPM Fusion installs suggested proprietary codecs (gstreamer, openh264, ffmp
 
 #### Enable Flathub
 Adds Flathub remote to flatpak. The Fedora one does not contain proprietary apps (like Slack).
-
-#### Custom Prompt
-Modifies terminal prompt, nothing serious, just aesthetics.
 
 #### Install Software
 You can select which flatpak app install from a list. Current list:
