@@ -6,10 +6,11 @@ HEIGHT=15
 WIDTH=120
 
 echo "SUDO priviledges & dialog package required!"
-if $(dnf list installed | grep dialog | wc -l) == 0; then
-	sudo dnf install dialog
+if [ "$(rpm -q dialog 2>/dev/null | grep -c "is not installed")" -eq 1 ]; 
+then
+    sudo dnf install -y dialog
 else
-	sudo
+    sudo
 fi
 
 
