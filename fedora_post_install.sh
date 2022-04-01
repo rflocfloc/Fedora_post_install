@@ -94,7 +94,7 @@ while true; do
 	    sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
 	    sudo dnf groupupdate sound-and-video -y
 	    sudo dnf install dnf-plugins-core -y
-	    sudo dnf install -y ffmpeg intel-media-driver git openssl-devel libcurl-devel ssh sshfs exfat-utils fuse-exfat 
+	    sudo dnf install -y ffmpeg intel-media-driver git openssl-devel libcurl-devel ssh sshfs exfat-utils fuse-exfat neofetch
 	    sudo dnf upgrade --refresh -y
             display_result "Codecs and Support Installed" 
            ;;
