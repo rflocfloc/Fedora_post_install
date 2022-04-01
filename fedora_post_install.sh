@@ -21,8 +21,9 @@ OPTIONS=(1 "DNF & RPM Fusion - Enables DNF max_parallel and RPM Fusion Repos"
          5 "Install Software - Installs a bunch of programs from Flatpak"
          6 "R & RStudio - Installs R, blas backends, and RStudio"
          7 "Fedora ToolBox - Adds Fedora ToolBox containers"
-         8 "Miniconda - Installs Miniconda and Mamba"
-         9 "Exit & Reboot - Reboots the system")
+         8 "Miniconda - Installs Miniconda, Mamba, and some envs"
+	 9 "Julia - Adds Julia Programming Language"
+         10 "Exit & Reboot - Reboots the system")
 
 
 display_result() {
@@ -123,10 +124,15 @@ while true; do
 	   conda config --add channels bioconda
 	   conda install mamba -y
 	   mamba install pandas numpy matplotlib -y
+	   mamba create -n "ml" -y python=3 pandas numpy matplotlib seaborn scipy scikit-learn jupyter
+	   mamba create -n "snakemake" -y python=3 pandas numpy matplotlib snakemake
 	   rm Miniconda3.sh
 	   display_result "Miniconda Up & Running" 
            ;;
-        9) echo "My pleasure, see ya!"
+	9) echo "Installing Julia"
+	   sudo dnf install julia -y
+	   ;;
+        10) echo "My pleasure, see ya!"
            sudo reboot
            ;;
   esac
