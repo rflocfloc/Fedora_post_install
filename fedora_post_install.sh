@@ -33,7 +33,7 @@ display_result() {
 APPS=(Firmware "GUI for firmware drivers" off 
       FontDownloader "FontDownloader app" off
       Fragments "Torrent client" off
-      GIMP "Photo editing app" off
+      org.gimp.GIMP "GIMP Photo editing app" off
       Inkscape "Vector graphics app" off
       com.visualstudio.code "VSCode" off
       com.github.marktext.marktext "Markdown app" off
