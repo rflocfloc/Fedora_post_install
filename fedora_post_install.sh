@@ -6,7 +6,7 @@ HEIGHT=0
 WIDTH=120
 
 echo "SUDO priviledges & dialog package required!"
-if $(sudo dnf list installed | grep dialog | wc -l) == 0; then
+if $(dnf list installed | grep dialog | wc -l) == 0; then
 	sudo dnf install dialog
 else
 	sudo
