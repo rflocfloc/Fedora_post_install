@@ -45,7 +45,11 @@ APPS=(Firmware "GUI for firmware drivers" off
       org.telegram.desktop "Telegram" off
       zoom "Zoom" off
       Spotify "Spotify" off
-      PDFArranger "PDF merger" off)
+      PDFArranger "PDF merger" off
+      org.gnome.DejaDup "Backups app" off
+      org.gnome.Todo "ToDos app" off
+      com.rafaelmardojai.Blanket "White noises app" off
+      com.github.maoschanz.drawing "Simple photo editing app" off)
 
 while true; do
   exec 3>&1
