@@ -50,7 +50,11 @@ You can select which flatpak app install from a list. Current list:
 - Telegram;
 - Zoom;
 - Spotify;
-- PDFArranger.
+- PDFArranger;
+- DejaDup;
+- ToDo;
+- Blanket;
+- Drawing.
 
 #### R & RStudio
 Installs R, RStudio dekstop and FlexiBLAS API interface for R (with all optimized blas backends).
