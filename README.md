@@ -54,7 +54,9 @@ You can select which flatpak app install from a list. Current list:
 - DejaDup;
 - ToDo;
 - Blanket;
-- Drawing.
+- Drawing;
+- Deskop icon files creator;
+- ExtensionManager.
 
 #### R & RStudio
 Installs R, RStudio dekstop and FlexiBLAS API interface for R (with all optimized blas backends).
