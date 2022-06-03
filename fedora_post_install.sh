@@ -114,6 +114,7 @@ while true; do
            sudo dnf install R -y
            sudo dnf install R-flexiblas -y # install FlexiBLAS API interface for R
 	   sudo dnf install flexiblas-*  -y # install all available optimized backends
+	   sudo dnf install libcurl-devel openssl-devel
 	   sudo dnf install rstudio-desktop -y
 	   display_result "R & RStudio have been installed" 
            ;;
