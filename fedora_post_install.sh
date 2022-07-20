@@ -95,7 +95,7 @@ while true; do
             sudo dnf groupupdate core -y
 	    sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
 	    sudo dnf groupupdate sound-and-video -y
-	    sudo dnf install -y ffmpeg intel-media-driver git openssl-devel libcurl-devel ssh sshfs exfat-utils fuse-exfat neofetch 
+	    sudo dnf install -y ffmpeg intel-media-driver git ssh sshfs exfat-utils fuse-exfat neofetch 
             display_result "Codecs and Support Installed" 
            ;;
         4)  echo "Enabling Flathub"
@@ -112,9 +112,12 @@ while true; do
            ;;
         6) echo "Setting up R & RStudio"
            sudo dnf install R -y
+	   sudo dnf -y install 'dnf-command(copr)'
+	   sudo dnf copr enable iucar/cran -y
+ 	   sudo dnf install R-CoprManager -y
            sudo dnf install R-flexiblas -y # install FlexiBLAS API interface for R
 	   sudo dnf install flexiblas-*  -y # install all available optimized backends
-	   sudo dnf install libcurl-devel openssl-devel
+	   sudo dnf install -y libcurl-devel openssl-devel curl-devel libXt-devel cmake
 	   sudo dnf install rstudio-desktop -y
 	   display_result "R & RStudio have been installed" 
            ;;
