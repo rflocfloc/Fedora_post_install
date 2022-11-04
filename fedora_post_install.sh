@@ -111,6 +111,9 @@ while true; do
  	#display_result "Flatpak Apps Added"
            ;;
         6) echo "Setting up R & RStudio"
+	   sudo dnf install toolbox -y
+	   toolbox create --release 36 R
+	   toolbox enter R
            sudo dnf install R -y
 	   sudo dnf -y install 'dnf-command(copr)'
 	   sudo dnf copr enable iucar/cran -y
@@ -119,6 +122,7 @@ while true; do
 	   sudo dnf install flexiblas-*  -y # install all available optimized backends
 	   sudo dnf install -y libcurl-devel openssl-devel curl-devel libXt-devel cmake
 	   sudo dnf install rstudio-desktop -y
+	   exit
 	   display_result "R & RStudio have been installed" 
            ;;
         7) echo "Installing Fedora ToolBox"
