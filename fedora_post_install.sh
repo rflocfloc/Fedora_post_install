@@ -22,7 +22,6 @@ OPTIONS=(1 "DNF & RPM Fusion - Enables DNF max_parallel and RPM Fusion Repos"
          6 "R & RStudio - Installs R, blas backends, and RStudio"
          7 "Fedora ToolBox - Adds Fedora ToolBox containers"
          8 "Miniconda - Installs Miniconda, Mamba, and some envs"
-	 9 "Julia - Adds Julia Programming Language"
          10 "Exit & Reboot - Reboots the system")
 
 
@@ -38,6 +37,7 @@ APPS=(Firmware "GUI for firmware drivers" off
       org.gimp.GIMP "GIMP Photo editing app" off
       Inkscape "Vector graphics app" off
       com.visualstudio.code "VSCode" off
+      com.jetbrains.PyCharm-Community "PyCharm" off
       com.github.marktext.marktext "Markdown app" off
       com.github.tchx84.Flatseal "Manage Flatpak apps permissions " off
       org.onlyoffice.desktopeditors "Office suite replacement" off
@@ -111,10 +111,7 @@ while true; do
  	#display_result "Flatpak Apps Added"
            ;;
         6) echo "Setting up R & RStudio"
-	   sudo dnf install toolbox -y
-	   toolbox create --release 36 R
-	   toolbox enter R
-           sudo dnf install R -y
+	   sudo dnf install R -y
 	   sudo dnf -y install 'dnf-command(copr)'
 	   sudo dnf copr enable iucar/cran -y
  	   sudo dnf install R-CoprManager -y
@@ -122,7 +119,6 @@ while true; do
 	   sudo dnf install flexiblas-*  -y # install all available optimized backends
 	   sudo dnf install -y libcurl-devel openssl-devel curl-devel libXt-devel cmake
 	   sudo dnf install rstudio-desktop -y
-	   exit
 	   display_result "R & RStudio have been installed" 
            ;;
         7) echo "Installing Fedora ToolBox"
@@ -136,17 +132,9 @@ while true; do
 	   conda update conda
 	   conda config --append channels conda-forge
 	   conda config --add channels bioconda
-	   conda install mamba -y
-	   mamba install pandas numpy matplotlib -y
-	   mamba create -n "ml" -y python=3 pandas numpy matplotlib seaborn scipy scikit-learn jupyter
-	   mamba create -n "snakemake" -y python=3 pandas numpy matplotlib snakemake
 	   rm Miniconda3.sh
-	   mamba clean --all -y
 	   display_result "Miniconda Up & Running" 
            ;;
-	9) echo "Installing Julia"
-	   sudo dnf install julia -y
-	   ;;
         10) echo "My pleasure, see ya!"
            sudo reboot
            ;;
