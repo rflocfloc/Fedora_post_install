@@ -107,7 +107,11 @@ while true; do
         5)  appsel=$(dialog --separate-output --checklist "Select the groups they belong:" 0 0 0 "${APPS[@]}" 2>&1 >/dev/tty)
         clear
         for opt in $appsel; do
- 		flatpak install -y $opt
+		if $(flatpak remotes | grep -q flathub);then 
+ 			flatpak install -y flathub $opt
+		else
+			flatpak install -y $opt
+		fi
  	done
  	#display_result "Flatpak Apps Added"
            ;;
