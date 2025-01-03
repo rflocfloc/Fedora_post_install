@@ -134,7 +134,7 @@ while true; do
 	   bash Miniconda3.sh -b -u -p ~/miniconda3
     	   ~/miniconda3/bin/conda init bash
 	   source $HOME/.bashrc
-	   conda update conda
+	   conda update conda -y
 	   conda config --append channels conda-forge
 	   conda install mamba -y
     	   mamba init
