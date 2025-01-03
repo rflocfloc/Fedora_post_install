@@ -43,6 +43,8 @@ You can select which flatpak app install from a list. Current list:
 - GIMP;
 - Inkscape;
 - VSCode;
+- PyCharm;
+- Zed
 - MarkText;
 - Flatseal;
 - OnlyOffice;
