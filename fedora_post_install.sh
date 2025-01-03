@@ -38,6 +38,7 @@ APPS=(Firmware "GUI for firmware drivers" off
       Inkscape "Vector graphics app" off
       com.visualstudio.code "VSCode" off
       com.jetbrains.PyCharm-Community "PyCharm" off
+      dev.zed.Zed "Zed editor" off
       com.github.marktext.marktext "Markdown app" off
       com.github.tchx84.Flatseal "Manage Flatpak apps permissions " off
       org.onlyoffice.desktopeditors "Office suite replacement" off
@@ -110,7 +111,7 @@ while true; do
  	done
  	#display_result "Flatpak Apps Added"
            ;;
-        6) echo "Setting up R & RStudio"
+        6) echo "Setting up R"
 	   sudo dnf install R -y
 	   sudo dnf -y install 'dnf-command(copr)'
 	   sudo dnf copr enable iucar/cran -y
@@ -118,8 +119,7 @@ while true; do
            sudo dnf install R-flexiblas -y # install FlexiBLAS API interface for R
 	   sudo dnf install flexiblas-*  -y # install all available optimized backends
 	   sudo dnf install -y libcurl-devel openssl-devel curl-devel libXt-devel cmake
-	   sudo dnf install rstudio-desktop -y
-	   display_result "R & RStudio have been installed" 
+	   display_result "R has been installed" 
            ;;
         7) echo "Installing Fedora ToolBox"
            sudo dnf install toolbox -y
@@ -127,11 +127,13 @@ while true; do
            ;;
         8) echo "Installing Miniconda"
            curl -sL "https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh" > "Miniconda3.sh"
-	   bash Miniconda3.sh
+	   bash Miniconda3.sh -b -u -p ~/miniconda3
+    	   ~/miniconda3/bin/conda init bash
 	   source $HOME/.bashrc
 	   conda update conda
 	   conda config --append channels conda-forge
-	   conda config --add channels bioconda
+	   conda install mamba -y
+    	   mamba init
 	   rm Miniconda3.sh
 	   display_result "Miniconda Up & Running" 
            ;;
